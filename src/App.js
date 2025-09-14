@@ -68,7 +68,10 @@ function App() {
     cancelRef.current = false;
 
     // Play devotional background audio
-    if (audioRef.current) audioRef.current.play();
+    if (audioRef.current && audioRef.current.readyState >= 2) {
+  audioRef.current.play().catch(err => console.error("Playback error:", err));
+    }
+  
 
     try {
       for (let i = 0; i < total; i++) {
@@ -141,7 +144,7 @@ function App() {
       )}
 
       {/* Background audio */}
-      <audio ref={audioRef} loop src="/background-music.mp3" preload="auto" />
+      <audio ref={audioRef} loop src="./background-music.mp3" preload="auto" />
     </div>
   );
 }
