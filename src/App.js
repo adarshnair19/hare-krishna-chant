@@ -12,7 +12,7 @@ function App() {
   const voiceRef = useRef(null);
   const audioRef = useRef(null);
 
-  const BEADS_PER_ROUND = 128;
+  const BEADS_PER_ROUND = 108;
 
   const mantra =
     "Hare Krishna Hare Krishna Krishna Krishna Hare Hare, Hare Ram Hare Ram Ram Ram Hare Hare.";
